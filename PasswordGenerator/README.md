@@ -54,6 +54,3 @@ A validation check ensures that the password length is at least 4 characters for
 - Avoid using common words or easily guessable patterns.
 - Use a password manager to store complex passwords securely.
 - Regularly update passwords to enhance security.
-
-## License
-This project is open-source and available under the MIT License. Contributions are welcome!

@@ -1,54 +1,74 @@
-# Password Manager
+# Secure Password Manager
 
 ## Description
-The **Password Manager** is a Python-based application with a **Tkinter GUI** that allows users to securely store, generate, and retrieve passwords. It helps manage multiple credentials efficiently in a single file.
+The **Secure Password Manager** is a Python-based application that allows users to **store, retrieve, and manage passwords securely**. It uses **Fernet encryption** from the `cryptography` module to protect stored credentials. The program features a **Tkinter GUI**, making it user-friendly.
+
+---
 
 ## Features
-- **Securely Store Passwords**: Save website, username, and password.
-- **Generate Strong Passwords**: Uses a mix of uppercase, lowercase, numbers, and symbols.
-- **View Saved Passwords**: Retrieve stored credentials in a readable format.
-- **Simple and User-Friendly UI**: Built using Tkinter.
+✅ **Secure Storage**: Encrypts passwords before saving.  
+✅ **Password Generation**: Creates strong passwords.  
+✅ **Retrieve Encrypted Passwords**: Decrypts passwords for user access.  
+✅ **User-Friendly Interface**: Built using Tkinter.  
+
+---
+
+## 🔐 Encryption Details
+- Uses **Fernet encryption** from the `cryptography` library.
+- A **secret key (`secret.key`)** is generated for encryption & decryption.
+- Passwords are **stored in an encrypted file (`passwords.enc`)**.
+
+---
 
 ## Installation
-### Prerequisites
-Ensure you have Python installed on your system. Tkinter is included in standard Python installations.
+### **1️⃣ Install Dependencies**
+Ensure Python is installed, then install `cryptography`:
+```sh
+pip install cryptography
+```
 
-### Steps to Install
-1. Clone the repository or download `password_manager.py`.
-2. Ensure Python is installed.
-3. Run the script using:
-
+### **2️⃣ Run the Script**
 ```sh
 python password_manager.py
 ```
 
+---
+
 ## Usage
-### Running the Application
-1. Open the script and enter the required details:
+### **1️⃣ Add a New Password**
+1. Enter:
    - **Website**
    - **Username**
    - **Password** (or generate one)
-2. Click "**Save**" to store credentials.
-3. Click "**View Saved Passwords**" to retrieve stored credentials.
+2. Click "**Save**" to store the password **securely**.
 
-## Code Explanation
-The script uses:
-- **Tkinter** for UI components.
-- **`random` & `string` modules** for password generation.
-- **File Handling (`passwords.txt`)** for storing and retrieving credentials.
+### **2️⃣ Generate a Password**
+1. Enter the **desired password length**.
+2. Click "**Generate Password**".
+3. The generated password appears in the UI.
+
+### **3️⃣ View Saved Passwords**
+1. Click "**View Saved Passwords**".
+2. Stored credentials are **decrypted** and displayed.
+
+---
 
 ## Example Output
-| Website   | Username | Generated Password |
-|-----------|----------|-------------------|
-| google.com | user123  | @aB3$dFgH        |
-| github.com | devuser  | Xy1!z@R4qP9s     |
+| Website   | Username | Encrypted Password (Stored) |
+|-----------|----------|----------------------------|
+| google.com | user123  | gAAAAABf@3… (encrypted)   |
+| github.com | devuser  | xYzaq1!9R… (encrypted)   |
 
-## Security Considerations
-- **Do not store plain-text passwords** (consider encrypting with `cryptography`).
-- **Use a master password** to protect stored credentials.
-- **Avoid using short passwords** (minimum recommended length is **8 characters**).
+---
 
-## Future Improvements
-- **Add encryption for secure storage.**
-- **Implement a search feature to find passwords easily.**
-- **Introduce a master password for additional protection.**
+## 🔐 Security Considerations
+- **Passwords are encrypted** before storage.
+- **Keep the `secret.key` safe**—losing it means **you can't decrypt stored passwords**.
+- **Avoid weak passwords** (minimum **8 characters** recommended).
+
+---
+
+## 🚀 Future Improvements
+- Add **a master password** to control access.  
+- Implement **search functionality** for saved credentials.  
+- Create a **cloud sync option** for remote password access.  

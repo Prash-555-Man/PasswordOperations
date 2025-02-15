@@ -1,9 +1,10 @@
 # 🔐 Secure Password Toolkit
 
-A collection of **Python-based password management tools** with a **Tkinter GUI**:
-1. **Password Vault** – Store and encrypt passwords securely  
+A collection of **Python-based password security tools** with a **Tkinter GUI**:
+1. **Password Vault** – Securely store and encrypt passwords  
 2. **Password Generator** – Generate strong passwords instantly  
 3. **Password Strength Checker** – Analyze password security  
+4. **Password Vulnerability Scanner** – Detect weak or commonly used passwords  
 
 ---
 
@@ -91,8 +92,63 @@ The **Password Strength Checker** analyzes passwords and determines their securi
 
 ---
 
+# 🔑 4. Password Vulnerability Scanner
+
+## 📌 Description
+The **Password Vulnerability Scanner** is a Python-based security tool that evaluates the strength of a password. It checks for **common weaknesses**, such as:  
+✔️ Short passwords (less than 8 characters)  
+✔️ Use of common weak passwords (e.g., "123456", "password")  
+✔️ Lack of character variety (uppercase, lowercase, numbers, special symbols)  
+
+The **Tkinter GUI** makes it easy to enter a password and instantly check its **security level**.
+
+## ✨ Features
+✅ **Real-time Password Strength Analysis**  
+✅ **Checks for Commonly Used Weak Passwords**  
+✅ **Character Variety Analysis** (Uppercase, Lowercase, Numbers, Special Characters)  
+✅ **Tkinter UI for User-Friendly Interaction**  
+✅ **Security Warnings for Weak Passwords**  
+
+### 📥 Installation
+1️⃣ **Install Python** ([Download Here](https://www.python.org/downloads/))  
+2️⃣ **Install Dependencies**  
+```sh
+pip install requests
+```
+3️⃣ **Run the Application**  
+```sh
+python password_vulnerability_scanner.py
+```
+
+### 🛠️ How It Works
+1. **Enter a Password** – Type your password into the input box.  
+2. **Click "Check Password"** – The system will analyze its strength.  
+3. **Results:**  
+   - ✅ **STRONG** – Secure password  
+   - ⚠️ **MEDIUM** – Needs improvement  
+   - ❌ **WEAK** – Unsafe password  
+
+### 📜 Example Output
+| Password Input | Strength Level | Reason |
+|---------------|---------------|--------|
+| `123456`      | ❌ Weak        | Too common |
+| `hello123`    | ❌ Weak        | Lacks uppercase & special characters |
+| `P@ssw0rd!`   | ✅ Strong      | Good mix of characters |
+| `AbC123!@#`   | ✅ Strong      | Excellent complexity |
+
+---
+
 # 🔐 Security Considerations
 ✔ **Use a Strong Master Password** – Avoid using common words  
 ✔ **Backup Your Encryption Key (`vault_key.key`)** – Needed for data recovery  
 ✔ **Do Not Manually Edit `vault_data.enc`** – It is encrypted  
 ✔ **Use a Password Manager for Complex Passwords**  
+
+---
+
+# 🚀 Future Enhancements
+🔜 **Check passwords against online breached databases (Have I Been Pwned API)**  
+🔜 **Suggest stronger password alternatives**  
+🔜 **Advanced reporting with entropy analysis**  
+🔜 **Biometric Authentication (Fingerprint Support)**  
+🔜 **Cloud Storage for Secure Backup & Syncing**  
